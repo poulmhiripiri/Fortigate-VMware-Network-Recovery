@@ -1,0 +1,44 @@
+# Partial observed configuration, transcribed from screenshots.
+# NOT a complete configuration backup; do not import as a restore file.
+# Interface excerpts only. FortiOS version was not captured.
+
+config system interface
+    edit "port1"
+        set vdom "root"
+        set ip 192.168.8.10 255.255.255.0
+        set allowaccess https ssh http
+        set type physical
+        set alias "Management"
+        set device-identification enable
+        set snmp-index 1
+    next
+    edit "port2"
+        set vdom "root"
+        set ip 192.168.253.15 255.255.255.0
+        set type physical
+        set alias "WAN"
+        set snmp-index 2
+    next
+    edit "port3"
+        set vdom "root"
+        set ip 192.168.21.10 255.255.255.0
+        set allowaccess ping https snmp
+        set type physical
+        set alias "LAN"
+        # Screenshot is paginated; remaining settings not captured here.
+    next
+end
+
+config router static
+    edit 1
+        set gateway 192.168.253.2
+        set device "port2"
+    next
+end
+
+# DHCP excerpt: port3 server entry 2.
+# dns-service default; default-gateway 192.168.21.10;
+# netmask 255.255.255.0; interface port3.
+# Pool start/end not visible in supplied screenshots.
+# A separate fortilink DHCP entry was present for 10.255.1.0/24;
+# it was not part of the three recovered lab segments.

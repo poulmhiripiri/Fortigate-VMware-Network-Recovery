@@ -1,0 +1,7 @@
+# Keep private backups and credentials outside this case study.
+*.conf
+*.bak
+*.key
+*.pem
+.env
+__pycache__/

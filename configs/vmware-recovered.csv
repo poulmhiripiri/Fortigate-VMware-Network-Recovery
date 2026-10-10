@@ -1,0 +1,4 @@
+vmnet,purpose,type,subnet,mask,fortigate_port,fortigate_ip,windows_host_ip,nat_gateway,vmware_dhcp
+VMnet2,Management,Host-only,192.168.8.0,255.255.255.0,port1,192.168.8.10,192.168.8.1,,Disabled
+VMnet8,WAN,NAT,192.168.253.0,255.255.255.0,port2,192.168.253.15,192.168.253.1,192.168.253.2,Disabled
+VMnet3,LAN,Host-only,192.168.21.0,255.255.255.0,port3,192.168.21.10,192.168.21.1,,Disabled
